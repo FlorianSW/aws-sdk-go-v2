@@ -3317,7 +3317,7 @@ func awsRestxml_serializeOpHttpBindingsGetObjectInput(v *GetObjectInput, encoder
 	}
 
 	if v.ExpectedBucketOwner != nil && len(*v.ExpectedBucketOwner) > 0 {
-		locationName := "X-Amz-Expected-Bucket-Owner"
+		locationName := strings.ToLower("X-Amz-Expected-Bucket-Owner")
 		encoder.SetQuery(locationName).String(*v.ExpectedBucketOwner)
 	}
 
